@@ -3,13 +3,14 @@ import psycopg2
 import pgsql_config
 
 
-def send(link, title, price, area, price_per_sqm, room, rent, heat, floor):
+def send(link, title, localization, price, area, price_per_sqm, room, rent, heat, floor):
     conn = None
     cursor = None
 
     create_script = '''CREATE TABLE IF NOT EXISTS otodom(
                                        link varchar(100) PRIMARY KEY,
                                        title varchar(200) NOT NULL,
+                                       localization varchar(100) NOT NULL,
                                        price varchar(40) NOT NULL,
                                        area varchar(40) NOT NULL,
                                        price_per_sqm varchar(10) NOT NULL,
@@ -18,8 +19,8 @@ def send(link, title, price, area, price_per_sqm, room, rent, heat, floor):
                                        heat varchar(40) NOT NULL,
                                        floor varchar(40) NOT NULL)'''
 
-    insert_script = "INSERT INTO otodom(link, title, price, area, price_per_sqm, room, rent, heat, floor) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-    insert_value = (link, title, price, area, price_per_sqm, room, rent, heat, floor)
+    insert_script = "INSERT INTO otodom(link, title, localization, price, area, price_per_sqm, room, rent, heat, floor) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    insert_value = (link, title, localization, price, area, price_per_sqm, room, rent, heat, floor)
 
     try:
         conn = psycopg2.connect(

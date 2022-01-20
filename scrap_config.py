@@ -1,1 +1,1 @@
-URL = "https://www.otodom.pl/pl/oferty/sprzedaz/mieszkanie/wiele-lokalizacji?roomsNumber=%5BTHREE%2CFOUR%2CFIVE%5D&pricePerMeterMax=9000&areaMin=65&distanceRadius=0&market=ALL&ownerTypeSingleSelect=ALL&page=1&limit=36&locations=%5Bdistricts_6-1299%2Cdistricts_6-1%2Cdistricts_6-1755%5D"
+URL = "https://www.otodom.pl/pl/oferty/sprzedaz/mieszkanie/wiele-lokalizacji?roomsNumber=[THREE%2CFOUR%2CFIVE]&pricePerMeterMax=9000&areaMin=65&distanceRadius=0&market=ALL&ownerTypeSingleSelect=ALL&page=1&limit=500&locations=[districts_6-1299%2Cdistricts_6-1%2Cdistricts_6-1755]"
