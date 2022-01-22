@@ -4,6 +4,7 @@ from requests import get  # downloading code from web
 import scrap_config
 import send_to_pg
 import is_new
+import send_email
 
 def float_parse(object):
     clean_object = object.replace(' ','').replace('zł', '').replace(',', '.').replace('m²', '')
@@ -53,7 +54,9 @@ def get_data():
             new_offer = is_new.new_offer(link)  #checking if the offer is in the base 0 new 1 mean old
             if new_offer == 0:
                 send_to_pg.send(link, title, localization, price, area, price_per_sqm, room, rent, heat, floor)
-                print("Offer send to database")
+                print("Offer send to database and email:")
+                send_email.send_email(link, title, localization, price, area, price_per_sqm, room, rent, heat, floor)
+
             else:
                 print("Offer is already in database")
         except:
